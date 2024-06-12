@@ -14,11 +14,32 @@
 		<p>solve the puzzle</p>
 	</header>
 	<section id="game-boards">
-		
+		<!-- these are the dragable pieces -->
+		<div id="puzzle-pieces">
+			<img src="images/topLeft0.jpg" class="puzzle-image" alt="top left pieces">
+			<img src="images/topRight0.jpg" class="puzzle-image" alt="top right pieces">
+			<img src="images/bottomLeft0.jpg" class="puzzle-image" alt="bottom left pieces">
+			<img src="images/bottomRight0.jpg" class="puzzle-image" alt="bottom right pieces">
+		</div>
+
+		<!-- where we want to drop pieces, drop zone -->
+		<div class="puzzle-board">
+			<div class="drop-zone tl"></div>
+			<div class="drop-zone tr"></div>
+			<div class="drop-zone bl"></div>
+			<div class="drop-zone br"></div>
+		</div>
 	</section>
 
+
 	<footer>
-		
+		<p>Click on the thumbnail to change pieces</p>
+		<nav id="buttonHolder">
+			<img src="images/buttonZero.jpg" alt="puzzle 1" id="0">
+			<img src="images/buttonOne.jpg" alt="puzzle 2" id="1">
+			<img src="images/buttonTwo.jpg" alt="puzzle 3" id="2">
+			<img src="images/buttonThree.jpg" alt="puzzle 4" id="3">
+		</nav>
 	</footer>
 
 	<script src="js/main.js"></script>
