@@ -49,7 +49,12 @@ function handleOver(e) {
 }
 
 function handleDrop() {
-  this.appendChild(draggedPiece);
+  // @ Add condition to not allow double-place the same spot
+  if (this.children.length > 0) {
+    alert("This spot is already taken!");
+  } else {
+    this.appendChild(draggedPiece);
+  }
 }
 
 // @ Add function to reset game, all of positions have reset to default
