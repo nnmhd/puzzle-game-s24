@@ -18,12 +18,24 @@ console.log(puzzleBoard);
 // functions
 
 function changeBGImage() {
-  console.log(this.id);
-  // background-image: url('../images/backGround0.jpg');
-  puzzleBoard.style.backgroundImage = `url('../images/backGround${this.id}.jpg'`;
-  // Method 2
-  console.log(event.currentTarget.id);
+  // @ Remove the placed puzzles from the Puzzle Board
+  dropZones.forEach((zone) => {
+    while (zone.firstChild) {
+      zone.removeChild(zone.firstChild);
+    }
+  });
+
+  // @ To change the puzzle pieces following the thumbnail
   puzzleBoard.style.backgroundImage = `url('../images/backGround${event.currentTarget.id}.jpg'`;
+  puzzlePieces[0].src = `images/topLeft${this.id}.jpg`;
+  puzzlePieces[1].src = `images/topRight${this.id}.jpg`;
+  puzzlePieces[2].src = `images/bottomLeft${this.id}.jpg`;
+  puzzlePieces[3].src = `images/bottomRight${this.id}.jpg`;
+
+  //  @ Add a Puzzle Container for picked image's puzzle pieces
+  puzzlePieces.forEach((piece) => {
+    puzzleContainer.appendChild(piece);
+  });
 }
 
 function handleStartDrag() {
